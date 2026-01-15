@@ -1,0 +1,4 @@
+name: VEL-UTILITY-GUARD
+version: '1.0-SNAPSHOT'
+main: at.albin.VELUTILITYGUARD.VELUTILITYGUARD
+api-version: '1.21'
