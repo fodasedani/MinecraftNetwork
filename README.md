@@ -90,11 +90,6 @@ Benötigte Tabellen (aus dem Code ersichtlich):
 
 ## Konfiguration
 
-### Datenbank (WICHTIG)
-Aktuell sind DB-Daten im Code hinterlegt (hardcoded). Für GitHub/Production empfohlen:
-- Passwort/Host/DB/User in Config (`config.yml`) oder ENV auslagern
-- Secrets **nie** committen
-
 **Velocity:** `DatabaseManager`  
 **Paper:** `DatabaseManagerPaper`
 
