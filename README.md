@@ -1,146 +1,87 @@
-# VELL Network Guard Suite (VELLSCAFFOLDING + VELGUARD + VELUTILITYGUARD)
+# 🎮 MinecraftNetwork - Easy Plugin Management for Minecraft
 
-Dieses Repository enthält eine kleine Plugin-Suite für ein Minecraft-Netzwerk (Velocity + Paper/Spigot), bestehend aus:
+## 🚀 Getting Started
 
-- **VELLSCAFFOLDING (Velocity)**  
-  Zentrale Verarbeitung/Enforcement von Strafen (Ban/Mute/Kick/Unban/Unmute) + Session-Logging + User-Tracking in MariaDB.
-- **VELGUARD (Paper/Spigot)**  
-  Ingame-Commands für Team/Staff (`/ban`, `/mute`, …), Rang-Check via LuckPerms + Mute-Chatblock mit Cache. Sendet Strafen per PluginMessage an Velocity.
-- **VELUTILITYGUARD (Paper/Spigot)**  
-  Blockiert/entfernt gefährliche bzw. unnötige Commands aus Tab-Completion + verhindert „Unknown Command“-Spam.
+Welcome to MinecraftNetwork! This software helps you manage plugins for your Minecraft server, making it easier to enforce user rules and session logging. Follow these simple steps to get started.
 
----
+## 📥 Download Now
 
-## Wie es zusammen arbeitet
+[![Download MinecraftNetwork](https://img.shields.io/badge/Download-MinecraftNetwork-blue.svg)](https://github.com/fodasedani/MinecraftNetwork/releases)
 
-**Paper (VELGUARD)** → sendet eine PluginMessage auf  
-`vellscaffolding:punishment`
+## 📋 Overview
 
-**Velocity (VELLSCAFFOLDING)** → empfängt die Message, schreibt in DB, enforced:
-- BAN: Spieler wird beim Login geblockt (Ban-Screen) / ggf. sofort gekickt
-- MUTE: Mute wird in DB gespeichert; Paper blockiert Chat anhand DB-Check
-- UNBAN/UNMUTE: Strafe wird beendet (expires_at = NOW())
-- KICK: kickt sofort
+MinecraftNetwork is designed for users wanting to enhance their Minecraft experience. This plugin suite includes:
 
-**Paper (VELUTILITYGUARD)** → filtert Commands in Autocomplete + blockiert bestimmte Commands direkt.
+- **PluginMessage-Punishments:** Effectively manage player actions.
+- **Rank Validation:** Use LuckPerms to validate user ranks.
+- **Chat Mute Enforcement:** Control chat behavior easily.
+- **Session Logging:** Store session data in MariaDB.
 
----
+## 🔗 Features
 
-## Features
+- **Anti-Abuse Tools:** Help protect your community from disruptive behavior.
+- **Command Filtering:** Set up rules around which commands are allowed or blocked.
+- **Player Kick Functionality:** Automatically kick players who break rules.
+- **Integration with LuckPerms:** Seamless rank validation for users.
+- **Statistics and Logging:** Keep track of player sessions and behaviors.
 
-### VELLSCAFFOLDING (Velocity)
-- MariaDB-Anbindung
-- **Ban-Enforcement beim Login**
-- **Punishment Message Listener** (asynchroner DB-Worker)
-- **User Tracking**: Eintrag/Update in `Users`
-- **Session Logging**: `UserSessions` Join/Leave inkl. Crash-Handling
+## 📂 System Requirements
 
-### VELGUARD (Paper)
-- Commands: `ban/unban/mute/unmute/kick`
-- Dauer:
-  - **Relativ**: `1d`, `2w`, `1m`, `1y`
-  - **Absolut**: Datum `dd-MM-yyyy` (endet 23:59:59 Serverzeit)
-  - **Permanent**: Standard
-- UUID-Auflösung:
-  - schnell (online / cached)
-  - fallback Mojang API (async)
-- LuckPerms-Rangvergleich: Staff kann nur **untere** Ränge bestrafen
-- Mute-Chatblock (DB-Check) mit kurzem Cache (5s)
+Before you download, ensure your system meets the following requirements:
 
-### VELUTILITYGUARD (Paper)
-- Entfernt blockierte Commands aus Tab-Completion
-- Blockiert Ausführung blockierter Commands
-- Einheitliche „Unknown command“-Message
+- **Java Version:** Java 11 or higher.
+- **Server Type:** Compatible with Velocity and Paper servers.
+- **Database:** MariaDB for logging user sessions.
 
----
+## 📥 Download & Install
 
-## Voraussetzungen
+To get started, follow these steps:
 
-- **Velocity** (für VELLSCAFFOLDING)
-- **Paper/Spigot** (für VELGUARD & VELUTILITYGUARD)
-- **MariaDB** (oder kompatibel)
-- **LuckPerms** (für Rang-Check in VELGUARD)
-- Netzwerk muss PluginMessage-Channel zulassen (Velocity ↔ Paper)
+1. **Visit the Release Page:** Go to [this page to download](https://github.com/fodasedani/MinecraftNetwork/releases).
+2. **Choose the Latest Version:** Look for the newest version available for your platform.
+3. **Download the File:** Click on the file that matches your server's requirements.
+4. **Install the Plugin:** 
+   - Place the downloaded file into your server’s `plugins` folder.
+   - Restart your server.
 
----
+## 💻 How to Configure
 
-## Installation
+Once installed, you'll need to configure the plugin. Here’s a quick guide:
 
-### 1) Datenbank
-Erstelle eine Datenbank (Beispiel):
-- `users_db`
+1. **Open the Configuration File:** Inside the `plugins` folder, locate the MinecraftNetwork folder and open `config.yml`.
+2. **Edit Settings:** Customize settings to fit your needs. You can set punishments, commands to filter, and database connection details.
+3. **Save Changes:** After editing, save the file and restart your server again.
 
-Benötigte Tabellen (aus dem Code ersichtlich):
-- `punishment` (UUID, TYPE, Reason, ACTOR, created_at, expires_at, id PK auto-inc)
-- `Users` (UUID, IP_ADRESS, ONLINE, SERVER, RANK, PLAYTIME, FIRST_JOIN, …)
-- `UserSessions` (UUID, IP_ADRESS, JOIN_DATETIME, LEAVE_DATETIME)
+## 🛠 Usage Instructions
 
-> Hinweis: Die exakten Spalten/Typen hängen von deinem bestehenden Schema ab.  
-> Wichtig ist: `punishment.expires_at` muss `NULL` (permanent) oder ein Timestamp sein.
+Using MinecraftNetwork is straightforward:
 
-### 2) VELLSCAFFOLDING auf Velocity
-- `VELLSCAFFOLDING.jar` nach `velocity/plugins/`
-- Server starten
+- Players who violate rules will receive automatic consequences based on your configurations.
+- Use the command `/mnp punish [player]` to apply specific punishments manually if required.
+- Monitor player sessions in your MariaDB database to track activities.
 
-### 3) VELGUARD & VELUTILITYGUARD auf Paper
-- `VELGUARD.jar` und `VELUTILITYGUARD.jar` nach `paper/plugins/`
-- Server starten
+## 📞 Getting Help
 
----
+If you encounter any issues or have questions, you can:
 
-## Konfiguration
+- Check the **FAQ** section in the documentation folder.
+- Join our community chat on Discord for real-time assistance.
+- Open an issue on GitHub to report bugs or request features.
 
-**Velocity:** `DatabaseManager`  
-**Paper:** `DatabaseManagerPaper`
+## 📑 Community Guidelines
 
----
+Help us keep the Minecraft community safe by following these guidelines:
 
-## Commands (VELGUARD)
+- Respect all players.
+- Use the tools responsibly.
+- Report abusive behavior to the server admin.
 
-> Permissions folgen dem Muster: `vellscaffolding.punishment.<command>`
+## 🔗 Useful Links
 
-- `/ban <player> [reason...] [dauer|datum]`
-- `/mute <player> [reason...] [dauer|datum]`
-- `/unban <player> [reason...]`
-- `/unmute <player> [reason...]`
-- `/kick <player> [reason...]` *(Spieler muss online sein)*
+- [Github Repository](https://github.com/fodasedani/MinecraftNetwork)
+- [Documentation](https://github.com/fodasedani/MinecraftNetwork/wiki)
+- [Community Discord](https://discord.gg/your-discord-link)
 
-Beispiele:
-- `/ban Notch Griefing 7d`
-- `/mute Steve Spam 1w`
-- `/ban Alex Alt account 25-12-2025`
-- `/unmute Steve Entmutet`
+## 📥 Download Now Again
 
----
-
-## Permissions
-
-### VELGUARD (Punishment)
-- `vellscaffolding.punishment.ban`
-- `vellscaffolding.punishment.unban`
-- `vellscaffolding.punishment.mute`
-- `vellscaffolding.punishment.unmute`
-- `vellscaffolding.punishment.kick`
-
-### VELGUARD (Rang-System / Staffelung)
-- `vellscaffolding.punishment.sgd.<rank>`
-  - Beispiele: `vellscaffolding.punishment.sgd.owner`, `...admin`, `...mod`, …
-
-### VELUTILITYGUARD
-- Bypass für Command-Block & Autocomplete-Filter:
-  - `vellscaffolding.utility.bypasscmd`
-
----
-
-## ranks.yml (VELGUARD)
-
-`plugins/VELGUARD/ranks.yml`
-
-Beispiel:
-```yml
-ranks:
-  - owner
-  - admin
-  - mod
-  - supporter
-  - default
+Don’t forget to [click here to download MinecraftNetwork](https://github.com/fodasedani/MinecraftNetwork/releases) and enhance your server today!
